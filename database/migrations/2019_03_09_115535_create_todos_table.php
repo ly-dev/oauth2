@@ -18,7 +18,8 @@ class CreateTodosTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('user_id');
             $table->string('task');
-            $table->boolean('done');            
+            $table->boolean('done'); 
+            $table->dateTime('ts', 6)->nullable();          
         });
     }
 

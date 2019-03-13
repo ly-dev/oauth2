@@ -24,3 +24,6 @@ Route::get('/settings', 'SettingsController@index')->name('settings');
 Route::get('/client-callback', function () {
     return 'ok';
 });
+
+Route::get('/test', 'TestController@testForm')->name('test');
+Route::post('/test', 'TestController@testProcess');
