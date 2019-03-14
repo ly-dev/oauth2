@@ -10,6 +10,8 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST">
                         {{ csrf_field() }}
+                        <p>{{ $ts->setTimezone('UTC')->format($dateFormat) }}</p>
+                        <p>{{ $ts->setTimezone('Europe/London')->format($dateFormat) }}</p>
                         <p>{{ $ts->setTimezone('Asia/Shanghai')->format($dateFormat) }}</p>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="ts" class="col-md-4 control-label">Timestamp</label>

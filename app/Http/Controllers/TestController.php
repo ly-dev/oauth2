@@ -32,8 +32,8 @@ class TestController extends Controller
         $ts = Carbon::now();
         $model = Todo::findOrFail(1);
         if (!empty($model->ts)) {
-            $ts = $model->ts;
-            // $ts = Carbon::createFromFormat(self::DBDATEFORMAT, $model->ts, self::DBTZ);
+            // $ts = $model->ts;
+            $ts = Carbon::createFromFormat('Y-m-d H:i:s.u', $model->ts, self::DBTZ);
         }
 
         return view('test', [
